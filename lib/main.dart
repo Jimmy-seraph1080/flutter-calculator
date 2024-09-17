@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Calculator',
+      title: 'Jimmy Zhang\'s Calculator',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
@@ -51,11 +51,11 @@ class _MyHomePageState extends State<MyHomePage> {
           result = 'Error';
         }
       } else if (value == '^2') {
-        // Handle squaring the number
-        input += '**2'; // Use '**' for exponentiation
+        // Square the number
+        input = '$input^2';
       } else if (value == '%') {
-        // Handle modulo operation
-        input += '%'; // Modulo operator
+        // Modulo operation
+        input += '%';
       } else {
         // Update the input expression
         input += value;
@@ -139,14 +139,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: <Widget>[
                     _buildButton('C'),
                     _buildButton('0'),
-                    _buildButton('^2'), // Squaring button
+                    _buildButton('='),
                     _buildButton('+'),
                   ],
                 ),
                 Row(
                   children: <Widget>[
-                    _buildButton('%'), // Modulo button
-                    _buildButton('='),
+                    _buildButton('^2'),
+                    _buildButton('%'),
                   ],
                 ),
               ],
